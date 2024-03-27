@@ -24,7 +24,7 @@ jobs:  push_to_registry:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: yidadaa/chatgpt-next-web-allin-one-api
+          images: zcqiand/chatgpt-next-web-allin-one-api
           tags: |
             type=raw,value=latest
             type=ref,event=tag

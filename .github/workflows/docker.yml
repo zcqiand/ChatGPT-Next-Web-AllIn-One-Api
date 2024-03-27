@@ -25,7 +25,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: zcqiand/chatgpt-next-web-FullOneApi
+          images: yidadaa/chatgpt-next-web
           tags: |
             type=raw,value=latest
             type=ref,event=tag
@@ -43,6 +43,7 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           context: .
+          platforms: linux/amd64,linux/arm64
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}

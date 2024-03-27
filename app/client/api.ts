@@ -154,8 +154,11 @@ export function getHeaders() {
     Accept: "application/json",
   };
   const modelConfig = useChatStore.getState().currentSession().mask.modelConfig;
-  const isGoogle = modelConfig.model.startsWith("gemini");
-  const isAzure = accessStore.provider === ServiceProvider.Azure;
+  // 对接one-api不需要Google和Azure
+  // const isGoogle = modelConfig.model.startsWith("gemini");
+  // const isAzure = accessStore.provider === ServiceProvider.Azure;
+  const isGoogle = false
+  const isAzure = false
   const authHeader = isAzure ? "api-key" : "Authorization";
   const apiKey = isGoogle
     ? accessStore.googleApiKey

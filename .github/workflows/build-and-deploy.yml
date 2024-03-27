@@ -45,4 +45,4 @@ jobs:
           host: ${{ secrets.CLOUD_HOST }}
           username: ${{ secrets.CLOUD_USERNAME }}
           password: ${{ secrets.CLOUD_PASSWORD }}
-          script: ./scripts/build-and-deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
+          script: sudo sh ./scripts/build-and-deploy.sh ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
